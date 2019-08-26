@@ -1,6 +1,8 @@
 import styled from "styled-components"
+import { transitionClasses } from "../../helpers/transitionClasses"
 
 export const StyledHeader = styled.div`
+  ${transitionClasses("fade", 1000)};
   height: 60vh;
   position: relative;
   width: 100%;
@@ -48,6 +50,7 @@ export const StyledHeader = styled.div`
       height: 100%;
       object-position: top;
       border-radius: 15px;
+      object-position: center;
     }
   }
 `
