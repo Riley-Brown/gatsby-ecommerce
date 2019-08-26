@@ -5,6 +5,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import { StyledHeader } from "./StyledHeader"
 import { useCarousel } from "../../hooks/useCarousel"
+import { TransitionGroup, CSSTransition } from "react-transition-group"
 
 const Header = () => {
   const carouselContainer = useRef()
@@ -46,7 +47,17 @@ const Header = () => {
             voluptate!
           </p>
         </div>
-        <Img fluid={node.images[index].fluid} key={node.id} />
+        <TransitionGroup>
+          <CSSTransition
+            appear={true}
+            key={index}
+            timeout={1000}
+            classNames="fade"
+          >
+            {/* <Img fluid={node.images[index].fluid} key={node.id} /> */}
+            <img srcSet={node.images[index].fluid.srcSet} alt="" />
+          </CSSTransition>
+        </TransitionGroup>
       </div>
     </StyledHeader>
   )
