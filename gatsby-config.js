@@ -44,5 +44,12 @@ module.exports = {
       },
     },
     `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-source-stripe`,
+      options: {
+        objects: ["Product", "Sku"],
+        secretKey: process.env.STRIPE_API_KEY,
+      },
+    },
   ],
 }
