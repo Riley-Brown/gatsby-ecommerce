@@ -18,12 +18,14 @@ export const useIsVisible = ({ element }) => {
 
   // check element rect top
   const isVisible = () => {
-    const top = element.current.getBoundingClientRect().top
-    console.log(top)
-    if (top >= 0 && top <= windowHeight) {
-      setVisible(true)
-    } else {
-      setVisible(false)
+    if (element.current) {
+      const top = element.current.getBoundingClientRect().top
+      console.log(top)
+      if (top >= 0 && top <= windowHeight) {
+        setVisible(true)
+      } else {
+        setVisible(false)
+      }
     }
   }
 
