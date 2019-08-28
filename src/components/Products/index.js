@@ -7,19 +7,18 @@ import { Link } from "gatsby"
 export default function Products() {
   const data = useStaticQuery(graphql`
     query ProductsQuery {
-      allContentfulProducts {
+      allStripeSku {
         edges {
           node {
             id
-            itemName
-            itemPrice
-            itemDescription {
-              itemDescription
-            }
-            slug
-            itemImage {
-              fluid {
-                ...GatsbyContentfulFluid
+            price
+            image
+            product {
+              images
+              description
+              name
+              metadata {
+                slug
               }
             }
           }
@@ -29,14 +28,21 @@ export default function Products() {
   `)
   return (
     <StyledProducts>
-      {data.allContentfulProducts.edges.map(product => (
-        <div className="product">
-          <Link to={product.node.slug}>
-            <h1>{product.node.itemName}</h1>
-            <p>{product.node.itemDescription.itemDescription}</p>
-            <Img fluid={product.node.itemImage.fluid} />
-          </Link>
-        </div>
+      {data.allStripeSku.edges.map(edge => (
+        <Link
+          to={edge.node.product.metadata.slug}
+          className="link-wrapper"
+          key={edge.node.product.id}
+        >
+          <div className="product" key={edge.node.product.id}>
+            <img src={edge.node.image} atl={edge.node.product.name} />
+            <div className="product-info">
+              <h1>{edge.node.product.name}</h1>
+              <p>{edge.node.product.description}</p>
+              <h3>${edge.node.price / 100}</h3>
+            </div>
+          </div>
+        </Link>
       ))}
     </StyledProducts>
   )
