@@ -12,7 +12,7 @@ export const StyledHeader = styled.div`
     display: flex;
 
     height: 60vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65));
     /* position: relative; */
     width: 100%;
     border-radius: 15px;
@@ -29,8 +29,10 @@ export const StyledHeader = styled.div`
         margin-bottom: 10px;
       }
       p {
-        font-size: 2.5rem;
+        font-size: 2.7rem;
         max-width: 400px;
+        font-weight: 500;
+        opacity: 0.9;
       }
     }
 
