@@ -32,7 +32,7 @@ const Header = () => {
 
   const [index] = useCarousel({
     data: node.images,
-    timeout: 4000,
+    timeout: 2500,
     element: carouselContainer,
     defaultVisible: true,
   })
