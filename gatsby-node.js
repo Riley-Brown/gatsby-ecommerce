@@ -15,19 +15,17 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
     resolve(
       graphql(`
         {
-          allContentfulProducts {
+          allStripeSku {
             edges {
               node {
-                id
-                itemName
-                itemPrice
-                itemDescription {
-                  itemDescription
-                }
-                slug
-                itemImage {
-                  fluid {
-                    src
+                price
+                image
+                product {
+                  images
+                  description
+                  name
+                  metadata {
+                    slug
                   }
                 }
               }
@@ -40,12 +38,16 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           reject(result.errors)
         }
 
-        result.data.allContentfulProducts.edges.forEach(edge => {
+        result.data.allStripeSku.edges.forEach(edge => {
           createPage({
-            path: edge.node.slug,
+            path: edge.node.product.metadata.slug,
             component: productTemplate,
             context: {
-              slug: edge.node.slug,
+              slug: edge.node.product.metadata.slug,
+              itemName: edge.node.product.name,
+              itemPrice: edge.node.price,
+              itemDescription: edge.node.product.description,
+              itemImage: edge.node.image,
             },
           })
         })
