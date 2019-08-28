@@ -9,8 +9,8 @@ import Products from "../components/Products"
 
 const IndexPage = () => (
   <>
-    {/* <Header /> */}
     <Layout>
+      <Header />
       <Products />
     </Layout>
   </>
