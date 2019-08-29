@@ -20,8 +20,9 @@ export const useIsVisible = ({ element }) => {
   const isVisible = () => {
     if (element.current) {
       const top = element.current.getBoundingClientRect().top
-      console.log(top)
-      if (top >= 0 && top <= windowHeight) {
+      const bottom = element.current.getBoundingClientRect().bottom
+
+      if (bottom >= 50 && top <= windowHeight) {
         setVisible(true)
       } else {
         setVisible(false)
