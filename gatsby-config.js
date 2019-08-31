@@ -51,5 +51,11 @@ module.exports = {
         secretKey: process.env.STRIPE_API_KEY,
       },
     },
+    {
+      resolve: `gatsby-plugin-stripe`,
+      options: {
+        async: true,
+      },
+    },
   ],
 }
