@@ -13,12 +13,13 @@ export default function Products() {
             id
             price
             image
-            product {
-              images
-              description
+            attributes {
               name
+            }
+            product {
               metadata {
                 slug
+                description
               }
             }
           }
@@ -26,19 +27,36 @@ export default function Products() {
       }
     }
   `)
+
+  const stripeCheckout = (e, sku) => {
+    e.preventDefault()
+    console.log("ayyyy")
+    const stripe = window.Stripe("pk_test_5Whh8fsKhT3xcbKeHdzmH7bU001RtkjRq1")
+    stripe
+      .redirectToCheckout({
+        items: [{ sku, quantity: 10 }],
+        successUrl: "http://localhost:8000",
+        cancelUrl: "http://localhost:8000",
+      })
+      .then(res => console.log(res))
+  }
   return (
     <StyledProducts>
       {data.allStripeSku.edges.map(edge => (
         <Link
-          to={edge.node.product.metadata.slug}
+          // to={`/${edge.node.product.metadata.slug}`}
           className="link-wrapper"
-          key={edge.node.product.id}
+          key={edge.node.id}
         >
-          <div className="product" key={edge.node.product.id}>
-            <img src={edge.node.image} atl={edge.node.product.name} />
+          <div
+            className="product"
+            // key={edge.node.product.id}
+            onClick={e => stripeCheckout(e, edge.node.id)}
+          >
+            <img src={edge.node.image} atl={edge.node.attributes.name} />
             <div className="product-info">
-              <h1>{edge.node.product.name}</h1>
-              <p>{edge.node.product.description}</p>
+              <h1>{edge.node.attributes.name}</h1>
+              <p>{edge.node.product.metadata.description}</p>
               <h3>${edge.node.price / 100}</h3>
             </div>
           </div>
