@@ -17,6 +17,7 @@ export const StyledProducts = styled.div`
     transition: 300ms;
     margin-bottom: 40px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 1px 6px;
+    background: #fff;
     &:hover {
       transform: translateY(-20px);
     }
@@ -24,7 +25,7 @@ export const StyledProducts = styled.div`
       border-top-left-radius: 10px;
       border-bottom-left-radius: 10px;
       width: 50%;
-      height: 200px;
+      height: 210px;
       object-fit: cover;
       object-position: center;
       display: block;
