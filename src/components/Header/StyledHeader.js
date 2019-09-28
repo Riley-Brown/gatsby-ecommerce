@@ -7,13 +7,12 @@ export const StyledHeader = styled.div`
   position: relative;
   width: 100%;
   display: flex;
-  margin: 100px 0;
+  /* margin: 50px 0; */
+  margin-bottom: 100px;
   .carousel-container {
     display: flex;
-
     height: 60vh;
     background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65));
-    /* position: relative; */
     width: 100%;
     border-radius: 15px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 1px 6px;
@@ -21,9 +20,7 @@ export const StyledHeader = styled.div`
       position: absolute;
       top: 30%;
       color: #fff;
-
       left: 100px;
-
       h1 {
         font-size: 7rem;
         margin-bottom: 10px;
