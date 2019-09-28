@@ -34,7 +34,7 @@ export default function Products() {
     const stripe = window.Stripe("pk_test_5Whh8fsKhT3xcbKeHdzmH7bU001RtkjRq1")
     stripe
       .redirectToCheckout({
-        items: [{ sku, quantity: 10 }],
+        items: [{ sku, quantity: 1 }],
         successUrl: "http://localhost:8000",
         cancelUrl: "http://localhost:8000",
       })
