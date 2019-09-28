@@ -11,12 +11,18 @@ export default function Products() {
         edges {
           node {
             id
-            price
-            image
-            attributes {
-              name
+            localFiles {
+              id
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
             }
+            image
+            price
             product {
+              name
               metadata {
                 slug
                 description
@@ -40,6 +46,7 @@ export default function Products() {
       })
       .then(res => console.log(res))
   }
+
   return (
     <StyledProducts>
       {data.allStripeSku.edges.map(edge => (
@@ -53,9 +60,9 @@ export default function Products() {
             // key={edge.node.product.id}
             onClick={e => stripeCheckout(e, edge.node.id)}
           >
-            <img src={edge.node.image} atl={edge.node.attributes.name} />
+            <Img fluid={edge.node.localFiles[0].childImageSharp.fluid} />
             <div className="product-info">
-              <h1>{edge.node.attributes.name}</h1>
+              <h1>{edge.node.product.name}</h1>
               <p>{edge.node.product.metadata.description}</p>
               <h3>${edge.node.price / 100}</h3>
             </div>
