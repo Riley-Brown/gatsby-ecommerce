@@ -6,8 +6,6 @@ export const StyledProducts = styled.div`
   flex-wrap: wrap;
   .link-wrapper {
     flex: 0 0 48%;
-    flex-wrap: wrap;
-    display: flex;
     text-decoration: none;
   }
   .product {
@@ -21,10 +19,14 @@ export const StyledProducts = styled.div`
     &:hover {
       transform: translateY(-20px);
     }
+    .gatsby-image-wrapper {
+      flex: 1 1 auto;
+      width: 100%;
+      height: 210px;
+    }
     img {
       border-top-left-radius: 10px;
       border-bottom-left-radius: 10px;
-      width: 50%;
       height: 210px;
       object-fit: cover;
       object-position: center;
