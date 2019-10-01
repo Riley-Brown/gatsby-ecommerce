@@ -5,11 +5,12 @@ export const StyledProducts = styled.div`
   justify-content: space-between;
   flex-wrap: wrap;
   .link-wrapper {
-    flex: 0 0 48%;
+    flex: 0 1 46%;
     text-decoration: none;
   }
   .product {
-    display: flex;
+    flex-direction: column;
+    flex: 0 1 48%;
     cursor: pointer;
     border-radius: 15px;
     transition: 300ms;
@@ -20,32 +21,46 @@ export const StyledProducts = styled.div`
       transform: translateY(-20px);
     }
     .gatsby-image-wrapper {
-      flex: 1 1 auto;
+      flex: 0 0 auto;
       width: 100%;
-      height: 210px;
+      height: 500px;
     }
     img {
       border-top-left-radius: 10px;
-      border-bottom-left-radius: 10px;
-      height: 210px;
-      object-fit: cover;
-      object-position: center;
-      display: block;
-      margin: 0;
+      border-top-right-radius: 10px;
     }
     .product-info {
-      margin-left: 10px;
-      flex: 100%;
-      padding: 10px;
+      display: flex;
+      padding: 25px;
       color: #222;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 90%;
+      margin: auto;
+      & div:first-of-type {
+        max-width: 70%;
+      }
       h1 {
-        font-size: 3rem;
+        font-size: 2.7rem;
+        font-weight: 500;
       }
       p {
         font-size: 1.9rem;
       }
       h3 {
         font-size: 2.2rem;
+        font-weight: 500;
+      }
+      button {
+        background: var(--secondary);
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-left: 50px;
+        font-size: 2rem;
+        min-width: 105px;
       }
     }
   }
