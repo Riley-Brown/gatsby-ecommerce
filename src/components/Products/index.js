@@ -50,24 +50,29 @@ export default function Products() {
   return (
     <StyledProducts>
       {data.allStripeSku.edges.map(edge => (
-        <Link
-          // to={`/${edge.node.product.metadata.slug}`}
-          className="link-wrapper"
-          key={edge.node.id}
+        // <Link
+        //   // to={`/${edge.node.product.metadata.slug}`}
+        //   className="link-wrapper"
+        //   key={edge.node.id}
+        // >
+        <div
+          className="product"
+          // key={edge.node.product.id}
+          onClick={e => stripeCheckout(e, edge.node.id)}
         >
-          <div
-            className="product"
-            // key={edge.node.product.id}
-            onClick={e => stripeCheckout(e, edge.node.id)}
-          >
-            <Img fluid={edge.node.localFiles[0].childImageSharp.fluid} />
-            <div className="product-info">
+          <Img fluid={edge.node.localFiles[0].childImageSharp.fluid} />
+          <div className="product-info">
+            <div>
               <h1>{edge.node.product.name}</h1>
               <p>{edge.node.product.metadata.description}</p>
               <h3>${edge.node.price / 100}</h3>
             </div>
+            <div>
+              <button>Buy Now</button>
+            </div>
           </div>
-        </Link>
+        </div>
+        // </Link>
       ))}
     </StyledProducts>
   )
