@@ -11,24 +11,21 @@ export const StyledProducts = styled.div`
   .product {
     flex-direction: column;
     flex: 0 1 48%;
-    cursor: pointer;
+
     border-radius: 15px;
     transition: 300ms;
     margin-bottom: 40px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 1px 6px;
     background: #fff;
-    &:hover {
-      transform: translateY(-20px);
-    }
     .gatsby-image-wrapper {
       flex: 0 0 auto;
       width: 100%;
       height: 500px;
-    }
-    img {
       border-top-left-radius: 10px;
       border-top-right-radius: 10px;
+      cursor: pointer;
     }
+
     .product-info {
       display: flex;
       padding: 25px;
