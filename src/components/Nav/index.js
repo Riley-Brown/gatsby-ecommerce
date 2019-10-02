@@ -2,6 +2,8 @@ import React from "react"
 import logo from "../../assets/img/rawberri-logo-cropped-bg.png"
 import { Link } from "gatsby"
 
+import { animateScroll } from "react-scroll/"
+
 export default function Nav() {
   return (
     <nav
@@ -23,20 +25,19 @@ export default function Nav() {
           padding: `1.45rem 1.0875rem`,
         }}
       >
-        <Link
-          to="/"
+        <span
           style={{
             color: `white`,
             textDecoration: `none`,
             textAlign: "center",
             margin: "auto",
             display: "block",
+            cursor: "pointer",
           }}
+          onClick={() => animateScroll.scrollToTop({ duration: 300 })}
         >
-          <span>
-            <img src={logo} style={{ margin: 0, height: "70px" }} />
-          </span>
-        </Link>
+          <img src={logo} style={{ margin: 0, height: "70px" }} />
+        </span>
       </div>
     </nav>
   )
