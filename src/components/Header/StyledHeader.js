@@ -3,15 +3,14 @@ import { transitionClasses } from "../../helpers/transitionClasses"
 
 export const StyledHeader = styled.div`
   ${transitionClasses("fade", 1000)};
-  height: 60vh;
+  min-height: calc(100vh - 300px);
   position: relative;
   width: 100%;
   display: flex;
-  /* margin: 50px 0; */
   margin-bottom: 100px;
   .carousel-container {
     display: flex;
-    height: 60vh;
+    min-height: calc(100vh - 300px);
     background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65));
     width: 100%;
     border-radius: 15px;
@@ -23,13 +22,21 @@ export const StyledHeader = styled.div`
       left: 100px;
       h1 {
         font-size: 7rem;
-        margin-bottom: 10px;
       }
       p {
         font-size: 2.7rem;
         max-width: 400px;
         font-weight: 500;
         opacity: 0.9;
+        margin-bottom: 20px;
+      }
+      button {
+        text-align: center;
+        margin: auto;
+        width: 200px;
+        font-size: 2.2rem;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
+          rgba(0, 0, 0, 0.23) 0px 1px 6px;
       }
     }
 
