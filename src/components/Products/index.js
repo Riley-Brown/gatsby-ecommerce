@@ -48,11 +48,14 @@ export default function Products() {
   }
 
   return (
-    <StyledProducts>
+    <StyledProducts id="products">
       {data.allStripeSku.edges.map(edge => (
-        <div className="product" key={edge.node.product.id}>
+        <div className="product" key={edge.node.id}>
           <span onClick={e => stripeCheckout(e, edge.node.id)}>
-            <Img fluid={edge.node.localFiles[0].childImageSharp.fluid} />
+            <Img
+              fluid={edge.node.localFiles[0].childImageSharp.fluid}
+              alt={edge.node.product.name}
+            />
           </span>
           <div className="product-info">
             <div>
