@@ -36,3 +36,15 @@ hr {
   border: none;
   border-top: 1px solid #ccc;
 }
+
+button {
+  background: var(--secondary);
+  color: #fff;
+  padding: 10px;
+  border-radius: 4px;
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
