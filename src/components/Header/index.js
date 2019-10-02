@@ -7,6 +7,8 @@ import { StyledHeader } from "./StyledHeader"
 import { useCarousel } from "../../hooks/useCarousel"
 import { TransitionGroup, CSSTransition } from "react-transition-group"
 
+import { Link as ScrollLink } from "react-scroll/"
+
 const Header = () => {
   const carouselContainer = useRef()
 
@@ -26,7 +28,6 @@ const Header = () => {
       }
     }
   `)
-  // console.log(images)
 
   const { node } = images.allContentfulProductsCarousel.edges[0]
 
@@ -46,6 +47,9 @@ const Header = () => {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis,
             voluptate!
           </p>
+          <ScrollLink smooth duration={300} offset={-130} to="products">
+            <button>See More</button>
+          </ScrollLink>
         </div>
         <TransitionGroup>
           <CSSTransition
