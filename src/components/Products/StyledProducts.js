@@ -11,7 +11,6 @@ export const StyledProducts = styled.div`
   .product {
     flex-direction: column;
     flex: 0 1 48%;
-
     border-radius: 15px;
     transition: 300ms;
     margin-bottom: 40px;
@@ -58,6 +57,10 @@ export const StyledProducts = styled.div`
         margin-left: 50px;
         font-size: 2rem;
         min-width: 105px;
+        transition: 200ms;
+        &:hover {
+          transform: translateY(-5px);
+        }
       }
     }
   }
