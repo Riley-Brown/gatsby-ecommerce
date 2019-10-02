@@ -8,6 +8,10 @@ export const StyledHeader = styled.div`
   width: 100%;
   display: flex;
   margin-bottom: 100px;
+  @media (max-width: 700px) {
+    min-height: calc(100vh - 200px);
+    margin-bottom: 50px;
+  }
   .carousel-container {
     display: flex;
     min-height: calc(100vh - 300px);
@@ -15,13 +19,31 @@ export const StyledHeader = styled.div`
     width: 100%;
     border-radius: 15px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 1px 6px;
+    @media (max-width: 700px) {
+      min-height: calc(100vh - 200px);
+    }
     .tag-line {
       position: absolute;
       top: 30%;
       color: #fff;
       left: 100px;
+      @media (max-width: 700px) {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+      }
+      @media (max-width: 600px) {
+        width: 90%;
+      }
       h1 {
         font-size: 7rem;
+        @media (max-width: 600px) {
+          font-size: 5rem;
+        }
+        @media (max-width: 420px) {
+          font-size: 3.5rem;
+          text-align: center;
+        }
       }
       p {
         font-size: 2.7rem;
@@ -29,6 +51,12 @@ export const StyledHeader = styled.div`
         font-weight: 500;
         opacity: 0.9;
         margin-bottom: 20px;
+        @media (max-width: 700px) {
+          max-width: initial;
+        }
+        @media (max-width: 420px) {
+          font-size: 2.2rem;
+        }
       }
       button {
         text-align: center;
@@ -37,6 +65,9 @@ export const StyledHeader = styled.div`
         font-size: 2.2rem;
         box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
           rgba(0, 0, 0, 0.23) 0px 1px 6px;
+        @media (max-width: 700px) {
+          display: block;
+        }
       }
     }
 
