@@ -56,6 +56,7 @@ export const StyledHeader = styled.div`
         }
         @media (max-width: 420px) {
           font-size: 2.2rem;
+          text-align: center;
         }
       }
       button {

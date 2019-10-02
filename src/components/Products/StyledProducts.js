@@ -42,6 +42,7 @@ export const StyledProducts = styled.div`
       @media (max-width: 600px) {
         flex-direction: column;
         align-items: flex-start;
+        max-width: 100%;
       }
       & div:first-of-type {
         max-width: 70%;
