@@ -31,12 +31,13 @@ export const StyledHeader = styled.div`
     }
     .tag-line {
       position: absolute;
-      top: 30%;
+      top: 50%;
+      transform: translateY(-50%);
       color: #fff;
       left: 100px;
       @media (max-width: 700px) {
         left: 50%;
-        transform: translateX(-50%);
+        transform: translate(-50%, -50%);
         width: 80%;
       }
       @media (max-width: 600px) {
@@ -45,7 +46,7 @@ export const StyledHeader = styled.div`
       @media (max-width: 350px) {
         position: initial;
         margin-top: 30%;
-        transform: translateX(0);
+        transform: translate(0);
         width: 95%;
       }
       h1 {
