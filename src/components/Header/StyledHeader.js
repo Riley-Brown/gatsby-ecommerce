@@ -12,6 +12,9 @@ export const StyledHeader = styled.div`
     min-height: calc(100vh - 200px);
     margin-bottom: 50px;
   }
+  @media (max-width: 350px), (max-height: 400px) {
+    min-height: 400px;
+  }
   .carousel-container {
     display: flex;
     min-height: calc(100vh - 300px);
@@ -19,8 +22,12 @@ export const StyledHeader = styled.div`
     width: 100%;
     border-radius: 15px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 1px 6px;
+
     @media (max-width: 700px) {
       min-height: calc(100vh - 200px);
+    }
+    @media (max-width: 350px), (max-height: 400px) {
+      min-height: 400px;
     }
     .tag-line {
       position: absolute;
@@ -34,6 +41,12 @@ export const StyledHeader = styled.div`
       }
       @media (max-width: 600px) {
         width: 90%;
+      }
+      @media (max-width: 350px) {
+        position: initial;
+        margin-top: 30%;
+        transform: translateX(0);
+        width: 95%;
       }
       h1 {
         font-size: 7rem;
