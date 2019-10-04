@@ -55,7 +55,7 @@ export const StyledHeader = styled.div`
           font-size: 5rem;
         }
         @media (max-width: 420px) {
-          font-size: 3.5rem;
+          font-size: 3rem;
           text-align: center;
         }
       }
@@ -69,7 +69,7 @@ export const StyledHeader = styled.div`
           max-width: initial;
         }
         @media (max-width: 420px) {
-          font-size: 2.2rem;
+          font-size: 1.8rem;
           text-align: center;
         }
       }
