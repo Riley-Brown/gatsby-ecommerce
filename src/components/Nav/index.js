@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useLayoutEffect } from "react"
 import { animateScroll } from "react-scroll"
 import { Link } from "gatsby"
 
@@ -11,7 +11,7 @@ const Nav = ({ siteTitle, pathname }) => {
   const [isMobile, setIsMobile] = useState(false)
   const [showMobileMenu, setShowMobileMenu] = useState(false)
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const mq = window.matchMedia("(max-width: 1100px)")
     if (mq.matches) {
       setIsMobile(true)
