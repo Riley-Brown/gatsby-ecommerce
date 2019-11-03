@@ -34,16 +34,22 @@ const Nav = ({ siteTitle, pathname }) => {
         </Link>
         <MobileNav isMobile={isMobile} showMobileMenu={showMobileMenu}>
           <ul onClick={() => setShowMobileMenu(false)}>
-            <li data-active={pathname === "/"}>
-              <Link to="/">Home</Link>
+            <li>
+              <a href="https://distracted-goldwasser-6c2aaa.netlify.com/">
+                Home
+              </a>
             </li>
-            <li data-active={pathname === "/about"}>
-              <Link to="/about">About</Link>
+            <li>
+              <a href="https://distracted-goldwasser-6c2aaa.netlify.com/about">
+                About
+              </a>
             </li>
-            <li data-active={pathname === "/contact"}>
-              <Link to="/contact">Contact</Link>
+            <li>
+              <a href="https://distracted-goldwasser-6c2aaa.netlify.com/contact">
+                Contact
+              </a>
             </li>
-            <li data-active={pathname === "/menu"}>
+            <li>
               <a
                 href="http://places.singleplatform.com/rawberri-3/menu"
                 target="_blank"
@@ -51,7 +57,7 @@ const Nav = ({ siteTitle, pathname }) => {
                 Menu
               </a>
             </li>
-            <li>
+            <li data-active="true">
               <a href="https://wizardly-jang-d732c8.netlify.com/">Store</a>
             </li>
             <li>
